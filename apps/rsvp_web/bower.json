@@ -1,0 +1,21 @@
+{
+  "name": "rsvp_web",
+  "authors": [
+    "jennyjean <jennyjean8675309@yahoo.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.5.0"
+  }
+}
