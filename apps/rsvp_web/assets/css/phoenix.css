@@ -99,3 +99,8 @@ header nav a {
     margin: 2rem 1rem;
   }
 }
+
+#event-btn a {
+  text-decoration: none;
+  color: white;
+}

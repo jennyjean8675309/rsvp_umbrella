@@ -1,8 +1,10 @@
 <h1>All Events</h1>
-<a href="<%= Routes.event_path(@conn, :create) %>" class="btn btn-primary pull-right">Add Event</a>
+<button id="event-btn"><a href="<%= Routes.event_path(@conn, :create) %>">Add Event</a></button>
 <div class='list-group'>
     <%= for e <- @events do %>
         <a href="events/<%= e.id %>">
+            <br>
+            <br>
             <div class="list-group-item">
                 <h4 class="list-group-item-heading"><%= e.title %></h4>
 

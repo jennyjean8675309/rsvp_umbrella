@@ -5,6 +5,7 @@ defmodule RsvpWeb.UserSocket do
   # channel "room:*", RsvpWeb.RoomChannel
   channel "event:*", RsvpWeb.EventChannel
   # this tells Elixir that we want to accept any messages that start with the string 'event:', and route those to the EventChannel
+  channel "event_user:*", RsvpWeb.EventUserChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After

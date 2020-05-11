@@ -14,5 +14,6 @@ import "../css/app.scss"
 //
 
 import event from "./event"
+import event_user from "./event_user"
 
 import "phoenix_html"

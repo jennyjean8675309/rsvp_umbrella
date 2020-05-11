@@ -32,6 +32,7 @@ defmodule RsvpWeb.Router do
     
     get "/login", LoginController, :index
     post "/login", LoginController, :login
+    get "/logout", LoginController, :logout, as: :logout
   end
 
   scope "/events", RsvpWeb do
@@ -42,7 +43,7 @@ defmodule RsvpWeb.Router do
     post "/new", EventController, :add
     get "/:id", EventController, :show
     post "/:id/reserve", EventController, :reserve
-
+    post "/:id/rsvp", EventController, :rsvp
   end
 
   # Other scopes may use custom stacks.

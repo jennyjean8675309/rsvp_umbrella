@@ -1,4 +1,4 @@
-<h1><%= @event.title %> <small><%= @event.location %></small></h1>
+<h1><%= @event.title %><small><%= @event.location %></small></h1>
 <h3><%= @event.date %></h3>
 
 <br>
@@ -6,6 +6,19 @@
 <h2>Event Description:</h2>
 <h3><%= @event.description %></h3>
 <h4>Available Spots: <span class="quantity"><%= @event.quantity_available %></span></h4>
+
+<h2>Current RSVPs:</h2>
+<h3 id="rsvp"><%= rsvp_count(@event.event_users)[:total] %></h3>
+
+<h2>yes: <span id="yes"><%= rsvp_count(@event.event_users)[:yes] %></span> no: <span id="no"><%= rsvp_count(@event.event_users)[:no] %></span> maybe: <span id="maybe"><%= rsvp_count(@event.event_users)[:maybe] %></span></h2>
+
+<%= form_for @conn, Routes.event_path(@conn, :rsvp, @event.id), [as: :rsvp, class: "form-inline"], fn f -> %>
+    <div class="form-group">
+        <%= select f, :rsvp, ["yes", "no", "maybe"], class: "form-control" %>
+    </div>
+
+    <%= submit "RSVP", class: "btn btn-primary pull-right" %>
+<% end %>
 
 <%= form_for @conn, Routes.event_path(@conn, :reserve, @event.id), [as: :reservation, class: "form-inline"], fn f -> %>
     <div class="form-group">

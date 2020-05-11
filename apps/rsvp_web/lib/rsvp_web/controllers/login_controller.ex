@@ -12,4 +12,10 @@ defmodule RsvpWeb.LoginController do
         |> Plug.Conn.put_resp_cookie("user_name", name, max_age: expiration)
         |> redirect(to: "/")
     end
+
+    def logout(conn, _params) do
+        conn
+        |> Plug.Conn.delete_resp_cookie("user_name")
+        |> redirect(to: "/")
+    end
 end

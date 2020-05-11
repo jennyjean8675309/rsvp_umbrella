@@ -17,6 +17,10 @@ import socket from './socket';
         quantity.innerText = event.quantity
     })
 
+    // channel.on("update_rsvp", event => {
+    //     console.log("Update", event)
+    // })
+
     channel.join()
         .receive("ok", resp => { console.log("Joined successfully event:" + id, resp)})
         .receive("error", resp => { console.log("Unable to join", resp)})

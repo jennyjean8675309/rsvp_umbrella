@@ -1,4 +1,4 @@
-defmodule Rsvp.Events do
+defmodule Rsvp.Event do
     use Ecto.Schema
 
     import Ecto.Changeset
@@ -9,6 +9,9 @@ defmodule Rsvp.Events do
         field :date, :naive_datetime
         field :description, :string
         field :quantity_available, :integer, default: 25
+
+        has_many :event_users, Rsvp.EventUser
+        many_to_many :users, Rsvp.User, join_through: "event_users"
 
         timestamps()
     end
